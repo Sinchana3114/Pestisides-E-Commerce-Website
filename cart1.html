@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 150px;
+        }
+        .remove-btn{
+            padding: 10px 15px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Your Cart</h1>
+
+    <div id="cart-items">
+       
+    </div>
+
+    
+
+
+
+
+
+     
+    <script>
+        function loadCart(){
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let carDiv = document.getElementById("cart-items")
+
+            if(cart.length ===0)
+        {
+            carDiv.innerHTML = `<b>your cart is empty </b>`;
+            return;
+        }
+        cart.forEach((item,index)=>{
+
+            const itemDiv = document.createElement("div");
+            itemDiv.className ="cart-item";
+            itemDiv.innerHTML=`
+            <img src="${item.image}" alt="">
+
+            <div id="cart-items">
+                <strong>${item.name}</strong>
+                Brand : ${item.brand}
+                Price : ${item.price}
+            </div>
+            <div class="btn-group">
+                <button class="remove-btn" onclick="removeItem(${index})">remove</button>
+            </div>
+                `
+            carDiv.append(itemDiv)
+        })
+        }
+        loadCart()
+
+        function removeItem(index){
+            let cart= JSON.parse(localStorage.getItem("cart")) ||  [];
+            cart.splice(index,1);
+            localStorage.setItem("cart",JSON.stringify(cart));
+            location.reload();
+        }
+        
+
+
+        
+    </script>
+</body>
+</html>

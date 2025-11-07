@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            padding: 8px;
+            width: 300px;
+            margin-bottom: 15px;
+        }
+        .product{
+            display: none;
+            padding: 5px;
+            border: 1px solid rgb(218, 187, 130);
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <h1>Search products</h1> -->
+    <input type="text" id="searchInput" placeholder="search product ........">
+
+    <div id="productlist">
+        <div class="product"><a href="./shop1.html">Pist Fix</a></div>
+        <div class="product"><a href="./shop2.html">All Expert</a></div>
+        <div class="product"><a href="./shop3.html">Natural Pest Control</a></div>
+        <div class="product"><a href="./shop4.html">Salvedon</a></div>
+        <div class="product"><a href="./shop5.html">Round-up</a></div>
+        <div class="product"><a href="./shop6.html">Diazin</a></div>
+        <div class="product"><a href="./shop7.html">Lubrio</a></div>
+        <div class="product"><a href="./shop8.html">Regiment Turbo</a></div>
+        <div class="product"><a href="./shop9.html">Organic Fertilizer</a></div>
+        <div class="product"><a href="./shop10.html">Gobar Compost</a></div>
+        <div class="product"><a href="./shop11.html">Seaweed Extract</a></div>
+        <div class="product"><a href="./shop12.html">Azadirachtin</a></div>
+        <div class="product"><a href="./shop13.html">Chlorpyrifos</a></div>
+        <div class="product"><a href="./shop14.html">Cypermethrin</a></div>
+        <div class="product"><a href="./shop15.html">Imidacloprid</a></div>
+        <div class="product"><a href="./shop16.html">Thiamethoxam</a></div>
+        <div class="product"><a href="./shop17.html">Fipronil</a></div>
+        <div class="product"><a href="./shop18.html">Quinalphos</a></div>
+        <div class="product"><a href="./shop19.html">Profenophos</a></div>
+        <div class="product"><a href="./shop20.html">Triazophos</a></div>
+        <div class="product"><a href="./shop21.html">Monocrotophos</a></div>
+        <div class="product"><a href="./shop22.html">Deltamethrin</a></div>
+        <div class="product"><a href="./shop23.html">Neem Cake</a></div>
+        <div class="product"><a href="./shop24.html">Bone Meal</a></div>
+        <div class="product"><a href="./shop25.html">Lime Powder</a></div>
+        <div class="product"><a href="./shop26.html">Epsom Salt</a></div>
+        <div class="product"><a href="./shop27.html">Zinc Sulphate</a></div>
+        <div class="product"><a href="./shop28.html">Potash Fertilizer</a></div>
+        <div class="product"><a href="./shop29.html">Humic Acid</a></div>
+        <div class="product"><a href="./shop30.html">Amino Acid Liquid</a></div>
+        <div class="product"><a href="./shop31.html">Bio NPK</a></div>
+        <div class="product"><a href="./shop32.html">Mycorrhiza Fungi</a></div>
+        <div class="product"><a href="./shop33.html">Sulphur Granules</a></div>
+        <div class="product"><a href="./shop34.html">Field Salt</a></div>
+        <div class="product"><a href="./shop35.html">Boron Fertilizer</a></div>
+        <div class="product"><a href="./shop36.html">Biochar</a></div>
+        <div class="product"><a href="./shop37.html">Insect Repellent Spray</a></div>
+        <div class="product"><a href="./shop38.html">Eco-Friendly Insecticide</a></div>
+        <div class="product"><a href="./shop39.html">Root Booster</a></div>
+        <div class="product"><a href="./shop40.html">Crop Shield</a></div>
+        <div class="product"><a href="./shop41.html">Weed Control Spray</a></div>     
+
+    </div>
+
+    <script>
+
+        let input = document.getElementById("searchInput");
+        let products = document.querySelectorAll (".product");
+
+        input.addEventListener("keyup",()=>{
+            const filter = input.value.toLowerCase().trim();
+            products.forEach(function (product){
+                const text = product.textContent.toLowerCase();
+
+                if(filter !=="" && text.includes(filter))
+            {
+                product.style.display="block";
+
+            }
+            else{
+                product.style.display="none"
+            }
+            })
+        })
+    </script>
+
+
+</body>
+</html>

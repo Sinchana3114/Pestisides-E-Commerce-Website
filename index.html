@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+    <!-- <h2>Shopping page</h2> -->
+    <div class="container">
+        <img src="Screenshot_2025-07-08_182757-removebg-preview.png" height="400px" width="500px" alt="cartoon astronout t-shirt">
+        <div class="brand">agricart</div>
+        <div class="product-name">cartoon astronout t-shirt</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="price">899rs</div>
+        <div class="add-to-cart" onclick="addToCart(
+            'cartoon astronout t-shirt',
+            'agrimart',
+            899,
+            'Screenshot_2025-07-08_182757-removebg-preview.png'
+        )">
+            🛒
+
+        </div>
+        
+    </div>
+    
+    <a href="./cart1.html">go-to-cart</a>
+
+    
+
+
+    <script>
+        function addToCart(name,brand,price,image){
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name,brand,price,image});
+            localStorage.setItem("cart",JSON.stringify(cart));
+            alert(`${name} added to cart`)
+            
+            
+        }
+    </script>
+    
+</body>
+</html>
